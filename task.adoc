@@ -1,0 +1,19 @@
+@startuml
+
+StartMenu -> GenerateMenu:Mode generate game request
+StartMenu -> GameMenu: Mode view game request
+
+GenerateMenu -> ViewCross: View all crossword req
+GameMenu -> ViewCross: View all crossword req
+
+GenerateMenu -> Utils: Data validation req
+Utils -> GenrateMenu: Data validation resp
+
+GameMenu -> Utils: Data validation req
+Utils -> GameMenu: Data validation resp
+
+GenerateMenu -> SaveCross: Save data req
+GenerateMenu -> StartMenu: Open start manu req
+GameMenu -> StartNenu: Open start menu req
+
+@enduml
